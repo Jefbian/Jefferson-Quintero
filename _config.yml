@@ -1,0 +1,14 @@
+# Configuración para GitHub Pages
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - assets
+
+# Asegurar que los archivos de assets se incluyan
+keep_files:
+  - assets

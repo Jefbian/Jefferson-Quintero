@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Imágenes</title>
+</head>
+<body>
+    <h1>Prueba de Carga de Imágenes</h1>
+    
+    <h2>Imagen de Perfil:</h2>
+    <img src="./assets/R.SOCIALES2_instagram.png" alt="Perfil" style="width: 100px; height: 100px; border: 1px solid #ccc;">
+    <p>Ruta: ./assets/R.SOCIALES2_instagram.png</p>
+    
+    <h2>Imagen de Fondo:</h2>
+    <img src="./assets/R.SOCIALES2-12.png" alt="Fondo" style="width: 200px; height: auto; border: 1px solid #ccc;">
+    <p>Ruta: ./assets/R.SOCIALES2-12.png</p>
+    
+    <h2>Todas las imágenes disponibles:</h2>
+    <div id="todas-imagenes"></div>
+    
+    <script>
+        const imagenes = [
+            'R.SOCIALES2_instagram.png',
+            'R.SOCIALES2_perfil.png',
+            'R.SOCIALES2-12.png',
+            'R.SOCIALES2-13.png',
+            'R.SOCIALES2-14.png',
+            'R.SOCIALES2-15.png'
+        ];
+        
+        const contenedor = document.getElementById('todas-imagenes');
+        
+        imagenes.forEach(img => {
+            const div = document.createElement('div');
+            div.style.margin = '10px 0';
+            
+            const imagen = document.createElement('img');
+            imagen.src = `./assets/${img}`;
+            imagen.alt = img;
+            imagen.style.width = '100px';
+            imagen.style.height = '100px';
+            imagen.style.objectFit = 'cover';
+            imagen.style.border = '1px solid #ccc';
+            imagen.style.marginRight = '10px';
+            
+            const texto = document.createElement('span');
+            texto.textContent = img;
+            
+            imagen.onload = () => {
+                texto.style.color = 'green';
+                texto.textContent += ' ✓ CARGADA';
+            };
+            
+            imagen.onerror = () => {
+                texto.style.color = 'red';
+                texto.textContent += ' ✗ ERROR';
+                imagen.style.background = '#f0f0f0';
+            };
+            
+            div.appendChild(imagen);
+            div.appendChild(texto);
+            contenedor.appendChild(div);
+        });
+    </script>
+</body>
+</html>

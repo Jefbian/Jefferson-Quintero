@@ -1,0 +1,13 @@
+# Configuración para manejo de archivos
+Options +FollowSymLinks
+RewriteEngine On
+
+# Manejo de archivos de imagen
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Configuración de tipos MIME
+AddType image/png .png
+AddType image/jpeg .jpg
+AddType image/jpeg .jpeg

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jefferson Quintero</title>
+  <link rel="stylesheet" href="estilos.css">
+  
+</head>
+<body style="
+  min-height:100vh;
+  background-color:#111;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(225deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 30px),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04) 0 40px, transparent 60px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 0 60px, transparent 100px);
+  background-blend-mode: lighten, lighten, normal, normal;
+  position:relative;
+">
+  <div style="
+    position:fixed;
+    top:0; right:0; bottom:0; left:0;
+    pointer-events:none;
+    z-index:0;
+    background: none;
+  ">
+    <div style="
+      position:absolute;
+      top:0; right:0; bottom:0;
+      width:60vw;
+      min-width:400px;
+      max-width:900px;
+      background: url('./assets/R.SOCIALES2-12.png') no-repeat right center;
+      background-size: contain;
+      opacity:0.18;
+      height:100vh;
+      pointer-events:none;
+      z-index:1;
+    "></div>
+  </div>
+  <header style="width:100%; background:#04bd3b; padding:15px 0; text-align:center; margin-bottom:10px; position:fixed; top:0; left:0; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <h1 id="titulo-animado" style="color:#fff; font-size:2.2em; font-family:'Open Sans', Arial, sans-serif; margin:0px; letter-spacing:1px; transition: transform 0.5s cubic-bezier(.4,1.6,.6,1), font-size 0.5s ease; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Productor Multimedia</h1>
+  </header>
+  
+  <!-- CSS Responsive para el título -->
+  <style>
+    /* Estilos para manejo de imágenes que no cargan */
+    #perfil-fijo {
+      background-color: #04bd3b !important;
+      border: 3px solid #fff !important;
+    }
+    
+    #perfil-fijo:before {
+      content: "JQ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      display: none;
+    }
+    
+    /* Mostrar iniciales si la imagen no carga */
+    #perfil-fijo[src=""]:before,
+    #perfil-fijo:not([src]):before {
+      display: block;
+    }
+    
+    @media (max-width: 480px) {
+      #titulo-animado {
+        font-size: 1.8em !important;
+      }
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      #titulo-animado {
+        font-size: 2.0em !important;
+      }
+    }
+  </style>
+  
+  <script>
+    // Efecto de scroll para el título - directamente en HTML
+    window.addEventListener('scroll', function() {
+      const titulo = document.getElementById('titulo-animado');
+      if (titulo) {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 50) {
+          // Ajustar desplazamiento según el ancho de pantalla
+          const anchoVentana = window.innerWidth;
+          let maxDesplazamiento;
+          
+          if (anchoVentana <= 480) {
+            // Móviles pequeños: máximo 70px (era 75px)
+            maxDesplazamiento = 70;
+          } else if (anchoVentana <= 768) {
+            // Tablets: máximo 140px (era 145px)
+            maxDesplazamiento = 140;
+          } else {
+            // Desktop: máximo 290px (era 295px)
+            maxDesplazamiento = 290;
+          }
+          
+          // Calcular desplazamiento
+          const desplazamiento = Math.min(scrollY - 50, maxDesplazamiento);
+          titulo.style.transform = `translateX(${desplazamiento}px)`;
+          
+          // Reducir tamaño del texto gradualmente (menos en móvil)
+          const factorEscala = anchoVentana <= 480 ? 0.15 : 0.3;
+          const escala = Math.max(0.7, 1 - (desplazamiento / maxDesplazamiento) * factorEscala);
+          
+          // Ajustar tamaño base según pantalla
+          let tamañoBase;
+          if (anchoVentana <= 480) {
+            tamañoBase = 1.8; // Más pequeño en móvil
+          } else if (anchoVentana <= 768) {
+            tamañoBase = 2.0; // Intermedio en tablet
+          } else {
+            tamañoBase = 2.2; // Original en desktop
+          }
+          
+          titulo.style.fontSize = `${tamañoBase * escala}em`;
+        } else {
+          titulo.style.transform = 'translateX(0px)';
+          
+          // Tamaño original según pantalla
+          const anchoVentana = window.innerWidth;
+          if (anchoVentana <= 480) {
+            titulo.style.fontSize = '1.8em';
+          } else if (anchoVentana <= 768) {
+            titulo.style.fontSize = '2.0em';
+          } else {
+            titulo.style.fontSize = '2.2em';
+          }
+        }
+      }
+    });
+    
+    // Ajustar tamaño inicial según pantalla al cargar
+    window.addEventListener('resize', function() {
+      const titulo = document.getElementById('titulo-animado');
+      const anchoVentana = window.innerWidth;
+      
+      if (titulo && window.scrollY <= 50) {
+        if (anchoVentana <= 480) {
+          titulo.style.fontSize = '1.8em';
+        } else if (anchoVentana <= 768) {
+          titulo.style.fontSize = '2.0em';
+        } else {
+          titulo.style.fontSize = '2.2em';
+        }
+      }
+    });
+  </script>
+  <!-- Script para verificar carga de imágenes -->
+  <script>
+    // Verificar si las imágenes se cargan correctamente
+    window.addEventListener('load', function() {
+      const imagenPerfil = document.getElementById('perfil-fijo');
+      
+      if (imagenPerfil) {
+        imagenPerfil.onerror = function() {
+          console.error('Error cargando imagen de perfil:', this.src);
+          // Intentar con rutas alternativas
+          const rutasAlternativas = [
+            './assets/R.SOCIALES2_perfil.png',
+            'assets/R.SOCIALES2_perfil.png',
+            'PAG. PERSONAL/assets/R.SOCIALES2_instagram.png',
+            './PAG. PERSONAL/assets/R.SOCIALES2_instagram.png'
+          ];
+          
+          let intentoActual = 0;
+          const probarSiguienteRuta = () => {
+            if (intentoActual < rutasAlternativas.length) {
+              this.src = rutasAlternativas[intentoActual];
+              intentoActual++;
+            } else {
+              // Si ninguna ruta funciona, mostrar iniciales
+              this.style.display = 'none';
+              console.error('No se pudo cargar ninguna imagen de perfil');
+            }
+          };
+          
+          this.onerror = probarSiguienteRuta;
+          probarSiguienteRuta();
+        };
+      }
+      
+      // Verificar si la imagen de fondo existe y probar alternativas
+      const elementoFondo = document.querySelector('div[style*="R.SOCIALES2-12.png"]');
+      const testImg = new Image();
+      testImg.onload = function() {
+        console.log('Imagen de fondo cargada correctamente');
+      };
+      testImg.onerror = function() {
+        console.error('Error cargando imagen de fondo, probando alternativas...');
+        const rutasFondo = [
+          './assets/R.SOCIALES2-13.png',
+          './assets/R.SOCIALES2-14.png',
+          './assets/R.SOCIALES2-15.png'
+        ];
+        
+        let fondo = 0;
+        const probarFondo = () => {
+          if (fondo < rutasFondo.length) {
+            const nuevaImg = new Image();
+            nuevaImg.onload = function() {
+              if (elementoFondo) {
+                elementoFondo.style.backgroundImage = `url('${rutasFondo[fondo]}')`;
+                console.log('Imagen de fondo alternativa cargada:', rutasFondo[fondo]);
+              }
+            };
+            nuevaImg.onerror = () => {
+              fondo++;
+              probarFondo();
+            };
+            nuevaImg.src = rutasFondo[fondo];
+          }
+        };
+        probarFondo();
+      };
+      testImg.src = './assets/R.SOCIALES2-12.png';
+    });
+  </script>
+  
+  <main style="margin-top:70px;">
+    <div style="display:flex; align-items:flex-start;">
+      <img id="perfil-fijo" src="./assets/R.SOCIALES2_instagram.png" alt="Foto perfil" style="width:165px; height:165px; object-fit:cover; border-radius:100px; margin-right:28px; margin-left:2px; box-shadow:0 2px 14px rgba(0,0,0,0.15); position:fixed; top:80px; left:5px; z-index:1100; transition: box-shadow 0.3s; background:#fff;">
+      <div style="flex:1; margin-left:180px;">
+        <div class="redes-flotantes">
+          <a href="https://www.facebook.com/groups/633010895780168/?ref=share&mibextid=NSMWBT" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/jefbian03?igsh=bTJhdnl5YTg3eTNq" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.tiktok.com/@jefbian03?_t=ZS-8xhelevYDJ7&_r=1" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+          </a>
+          <a href="https://wa.me/message/Z25K7UEGPB5PC1" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+        <section id="inicio">
+          <p style="font-size:20px; font-family:'Courier New', Courier, monospace; margin-bottom:8px; margin-top:0; text-align:left; margin-left:5px;">Del diseño textil al diseño web. He trabajado en publicidad personalizada y sublimación, y ahora integro programación para crear páginas que hablan por ti. Esta página es más que una vitrina de mis servicios: es un reflejo de mi evolución como desarrollador. Más que mostrar lo que hago, esta página documenta lo que voy siendo: cada cambio, cada nuevo detalle, refleja mi crecimiento técnico y creativo.</p>
+          <div style="position:relative; top:-10px;">
+              <p style="font-size:20px; font-family:'Courier New', Courier, monospace; margin-bottom:8px; margin-top:0; text-align:left; margin-left:5px;">A continuación, te presento mi nivel de dominio en programas de diseño, edición y áreas relacionadas con la publicidad, evaluado en una escala del 1 (básico) al 5 (avanzado), según mi experiencia práctica.</p>
+              <table class="tabla-programas" border="1" style="table-layout: fixed; margin-left:auto; margin-right:auto; width: 100%; max-width: 420px; margin-bottom:10px;">
+                <tr>
+                  <th align="left" style="width:250px; min-width:100px; padding-left:15px;">PROGRAMA</th>
+                  <th align="center" id="porcentaje" style="min-width:100px;">CALIF.</th>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Diseño vectorial avanzado para publicidad." style="text-align:left; padding-left:15px;">Illustrator</td>
+                  <td align="center">4</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Retoque fotográfico y composición visual." style="text-align:left; padding-left:15px;">Photoshop</td>
+                  <td align="center">4</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Manejo de artes finales para impresión." style="text-align:left; padding-left:15px;">Corel Draw</td>
+                  <td align="center">3.3</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Uso básico-intermedio, con ganas de enriquecer cada día más para prestar un buen servicio a los clientes." style="text-align:left; padding-left:15px;">VS Code</td>
+                  <td align="center">3</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Edición de video rápida y redes sociales." style="text-align:left; padding-left:15px;">Capcut</td>
+                  <td align="center">3</td>
+                </tr>
+                <tr>
+                  <th colspan="2" style="text-align:center; background:#04bd3b; color:#fff; font-size:20px;">Conocimiento y experiencia</th>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Creación gráfica para distintos medios." style="text-align:left; padding-left:15px;">Diseño</td>
+                  <td align="center">4.2</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Atención al cliente y promoción de servicios." style="text-align:left; padding-left:15px;">Ventas</td>
+                  <td align="center">4</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Dominio de impresión textil y gran formato." style="text-align:left; padding-left:15px;">Manejo de plotter</td>
+                  <td align="center">4</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Diseño de contenido digital y publicidad." style="text-align:left; padding-left:15px;">Diseño para redes sociales</td>
+                  <td align="center">4</td>
+                </tr>
+                <tr>
+                  <td class="programa-popup" data-desc="Formación en curso. Actualmente aplico funciones intermedias para mejorar la estructura y experiencia del sitio web." style="text-align:left; padding-left:15px;">Diseño y Programación Web</td>
+                  <td align="center">3.2</td>
+                </tr>
+              </table>
+          </div>
+          <!-- INICIO DEL CONTENIDO DE PORTAFOLIO Y SERVICIOS -->
+          <h2 style="text-align:center; color:#04bd3b; margin-top: 0px; margin-bottom: 4px; font-size:28px;">Servicios...</h2>
+          <p style="font-size:20px; font-family:'Courier New', Courier, monospace; margin-bottom:8px; margin-top:0; text-align:left; margin-left:5px;">Con mi conocimiento y experiencia, estos son los servicios que te puedo ofrecer.<br>Cada uno está valorado en una escala del 1 al 5 según mi dominio actual, y sigo abierto a nuevos retos para seguir creciendo.</p>
+          <table class="tabla-portafolio servicios" style="width: 550px; table-layout: fixed; margin-left:auto; margin-right:auto; margin-bottom:6px;">
+            <tr>
+              <th style="text-align:center; width:78%;">Servicio</th>
+              <th style="width:22%;">Experiencia</th>
+            </tr>
+            <tr>
+              <td>Diseño gráfico para publicidad</td>
+              <td align="center">4</td>
+            </tr>
+            <tr>
+              <td>Asesoría en publicidad personalizada</td>
+              <td align="center">4</td>
+            </tr>
+            <tr>
+              <td>Diseño gráfico para sublimación y estampados textiles</td>
+              <td align="center">4</td>
+            </tr>
+            <tr>
+              <td>Manejo de plotter para impresión de sublimación</td>
+              <td align="center">3.8</td>
+            </tr>
+            <tr>
+              <td>Retoque fotográfico</td>
+              <td align="center">3.7</td>
+            </tr>
+            <tr>
+              <td>Diseño y programación web</td>
+              <td align="center">3</td>
+            </tr>
+          </table>
+          <h2 style="text-align:center; color:#04bd3b; margin-top:4px; margin-bottom:4px; font-size:28px;">Portafolio...</h2>
+          <p style="font-size:20px; font-family:'Courier New', Courier, monospace; margin-bottom:8px; margin-top:0; text-align:left; margin-left:5px;">A continuación se muestran algunos de mis trabajos realizados en distintas áreas del diseño gráfico y la personalización textil.</p>
+          
+          <!-- NUEVA TABLA DE PORTAFOLIO - ESTRUCTURA LIMPIA -->
+          <table class="tabla-portafolio-nueva">
+            <thead>
+              <tr>
+                <th class="col-tipo">Tipo</th>
+                <th class="col-evidencia">Evidencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1. DEPORTIVO -->
+              <tr class="categoria-deportivo">
+                <td rowspan="3" class="categoria-nombre">1. Deportivo</td>
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/16UdL00vQWr6NxzEql4Syr8_C-a3UTCok?usp=sharing" target="_blank" class="btn-evidencia">Uniformes de Futbol</a>
+                </td>
+              </tr>
+              <tr class="categoria-deportivo">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1sBpkrRDWLL-MqS0DyUkHvfwKXJ0nUo_q?usp=sharing" target="_blank" class="btn-evidencia">Camisas Deportivas</a>
+                </td>
+              </tr>
+              <tr class="categoria-deportivo">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1MnuMkSr-D7t2ZLPUaeUq7pHX-WAGQi26?usp=sharing" target="_blank" class="btn-evidencia">Uniformes de Baloncesto</a>
+                </td>
+              </tr>
+              
+              <!-- 2. SUBLIMACIÓN -->
+              <tr class="categoria-sublimacion">
+                <td rowspan="5" class="categoria-nombre">2. Sublimación - Estampados</td>
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1TlpzZLMhVhb_iXzHJnpfwL31L_QO6yAr?usp=sharing" target="_blank" class="btn-evidencia">Camisas para Negocios</a>
+                </td>
+              </tr>
+              <tr class="categoria-sublimacion">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1rqAWG9TFK8OEYppUpMZ4XL0ZTOjOl6AP?usp=sharing" target="_blank" class="btn-evidencia">Camisas Jerseys...</a>
+                </td>
+              </tr>
+              <tr class="categoria-sublimacion">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1Si1MQVRr1RWvG7XOJvRTKL3WOPHBk2cn?usp=sharing" target="_blank" class="btn-evidencia">Camisas Estampadas</a>
+                </td>
+              </tr>
+              <tr class="categoria-sublimacion">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1wJGQZwxnjN02PxvATYrDW8ZZI3ApzTb1?usp=sharing" target="_blank" class="btn-evidencia">Camisas Polos</a>
+                </td>
+              </tr>
+              <tr class="categoria-sublimacion">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1Mg9yvkrSk9BTCG5f7ZxqpHkU3Few8NHs?usp=sharing" target="_blank" class="btn-evidencia">Camisas Prom. 11</a>
+                </td>
+              </tr>
+              
+              <!-- 3. OTROS -->
+              <tr class="categoria-otros">
+                <td rowspan="2" class="categoria-nombre">3. Otros</td>
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1wgcDZKp2oDKdgDhI0xvxC32MUYXVA_0x?usp=sharing" target="_blank" class="btn-evidencia">Llaveros</a>
+                </td>
+              </tr>
+              <tr class="categoria-otros">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1mVE0fOpKok93KSLbQpl0Baa-Gtafpm4_?usp=sharing" target="_blank" class="btn-evidencia">Mugs</a>
+                </td>
+              </tr>
+              
+              <!-- 4. DISEÑO PUBLICITARIO -->
+              <tr class="categoria-publicitario">
+                <td rowspan="4" class="categoria-nombre">4. Diseño Publicitario</td>
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/15w1qI7W1mmvxgqLA07MlDqcCpUp75DQq?usp=sharing" target="_blank" class="btn-evidencia">Avisos Publicitarios</a>
+                </td>
+              </tr>
+              <tr class="categoria-publicitario">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1lYRx64rysEcafoAbUDWvUuQWEulnik7V?usp=sharing" target="_blank" class="btn-evidencia">Diseños</a>
+                </td>
+              </tr>
+              <tr class="categoria-publicitario">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1AYyLXzuQDKPIOg68T0zMPTO_amuhqnD0?usp=sharing" target="_blank" class="btn-evidencia">Fotografia</a>
+                </td>
+              </tr>
+              <tr class="categoria-publicitario">
+                <td class="evidencia-celda">
+                  <a href="https://drive.google.com/drive/folders/1s6Wld_-iMb3WekOgYbLnI4sa5OqftOXV?usp=sharing" target="_blank" class="btn-evidencia">Trjts Presentacion</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="height:10px;"></div>
+          <p style="font-size:20px; font-family:'Courier New', Courier, monospace; margin-top:0; margin-bottom:8px; text-align:center; color:#333;">Se vienen más trabajos. Este portafolio aún está en construcción.<br>¡Muy pronto, más contenido por aquí!</p>
+          <!-- FIN DEL CONTENIDO DE PORTAFOLIO Y SERVICIOS -->
+        </section>
+      </div>
+    </div>
+    <!-- Eliminada la sección de contacto -->
+    <p id="descripcion"></p>
+  </main>
+  <script src="script.js"></script>
+  <!-- Popup para mostrar descripción de programas -->
+<div id="ventana" style="display:none;">
+  <div id="contenidoPopup"></div>
+  <span id="cerrar">&times;</span>
+</div>
+  
+  <!-- Footer nuevo optimizado para móvil -->
+  <div class="footer-nuevo">
+    <p>© 2023 Jefferson Quintero. Todos los derechos reservados.</p>
+  </div>
+</body>
+</html>

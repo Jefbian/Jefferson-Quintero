@@ -1,0 +1,652 @@
+/* Importar Open Sans desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+body {
+  background-color: rgb(253, 253, 253);
+  text-align: left;
+  font-weight: initial;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  padding-top: 20px; /* o el alto del header */
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+    h2:hover {
+      color: #000 !important;
+      cursor: pointer;
+    }
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+table {
+  border-top: 2px solid #05db45;
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th {
+  background-color: #04bd3b;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: center;
+  font-size: 20px;
+}
+td {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+tr:hover {
+  background-color: #7af192;
+}
+td, th {
+  cursor: pointer;
+}
+h1, h2, h3 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+h1 {
+  color: #04bd3b;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+h1:hover {
+  color: #222;
+  text-decoration: underline;
+}
+h2 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  color: #04bd3b;
+}
+h2:hover {
+  color: #222;
+  text-decoration: underline;
+}
+h3 {
+  margin: 20px 0 2px 0;
+  color: #04bd3b;
+}
+p {
+  font-size: 50px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 20px;
+  color: #fff !important;
+}
+ol {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 0px;
+  padding: 10px 30px;
+  margin: 0px auto 20px auto;
+  width: 80%;
+}
+.menu {
+  background-color: #04bd3b;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.menu li a:hover {
+  color: #222;
+}
+#ventana {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #969595;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  margin: auto;
+  min-width: 300px;
+  max-width: 90vw;
+}
+#contenidoPopup {
+  position: relative;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+#cerrar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #900;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.cuadro {
+  background-color: #fff;
+  padding: 10px 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  margin: 20px auto;
+  text-align:center;
+  width: 85%;
+  font-size: 20px;
+}
+.tablas-flex {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin: 30px 0;
+  width: 100%;
+  max-width: 100vw;
+}
+.tablas-flex > div {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 260px;
+}
+.tablas-flex > div > table {
+  height: 100%;
+  min-height: 260px;
+}
+#portafolio h2:hover {
+  color: #222 !important;
+  text-decoration: underline;
+}
+.redes-flotantes {
+  position: fixed;
+  bottom: 24px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  left: 10px;
+  top: calc(51% + 10px);
+  transform: translateY(-50%);
+  z-index: 900;
+
+}
+.redes-flotantes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #222;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  padding: 8px;
+  transition: box-shadow 0.2s, background 0.2s;
+  width: 48px;
+  height: 48px;
+}
+.redes-flotantes a:hover {
+  background: #04bd3b;
+  box-shadow: 0 4px 16px rgba(4,189,59,0.18);
+}
+.redes-flotantes img {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(1);
+}
+.redes-flotantes span {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .tablas-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tablas-flex > div {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+  h1, h2, h3 {
+    font-size: 22px;
+  }
+  p, ol, td, th {
+    font-size: 15px !important;
+  }
+  table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    font-size: 15px !important;
+  }
+  .tablas-flex > div > table {
+    min-width: 0 !important;
+    width: 100% !important;
+    font-size: 15px !important;
+  }
+  .tablas-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .redes-flotantes {
+    right: 2px;
+    bottom:24px;
+    gap: 8px;
+  }
+  .redes-flotantes a {
+    width: 38px;
+    height: 38px;
+    padding: 6px;
+  }
+  .redes-flotantes img {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 13px;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  h1, h2, h3 {
+    font-size: 90%;
+  }
+}
+/* Altura igualada para las tablas de la sección Inicio */
+#inicio .tablas-flex > div {
+  min-height: 260px !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+#inicio .tablas-flex > div > table {
+  flex: 1 1 auto;
+  min-height: 100% !important;
+  height: 100% !important;
+}
+.tablas-flex.diseño-publicitario {
+  margin-top: -10px !important;
+}
+/* Ancho fijo para la columna CALIF. en tablas de la sección inicio */
+#inicio table th:last-child,
+#inicio table td:last-child {
+  width: 100px !important;
+  max-width: 100px !important;
+  min-width: 100px !important;
+}
+.perfil-fijo {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 80px;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+/* Estilos movidos desde el HTML */
+p { color: #fff !important; }
+h2 { color: #04bd3b !important; transition: color 0.3s; }
+h2:hover { color: #fff !important; }
+table {
+  background: rgba(10,10,10,0.92) !important;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+/* Fondo blanco y texto negro solo para las celdas td de la tabla de servicios */
+.tabla-portafolio.servicios td {
+  background: #fff !important;
+  color: #111 !important;
+  transition: none !important;
+}
+
+/* Alineación a la izquierda para la columna "Servicio" */
+.tabla-portafolio.servicios td:first-child {
+  text-align: left !important;
+  padding-left: 20px !important;
+}
+
+.tabla-portafolio.servicios td:hover {
+  background: #fff !important;
+}
+/* Fondo blanco y texto negro solo para las celdas td de la tabla de programas */
+.tabla-programas td {
+  background: #fff !important;
+  color: #111 !important;
+  transition: none !important;
+}
+
+/* Alineación a la izquierda para la primera columna de la tabla de programas */
+.tabla-programas td:first-child {
+  text-align: left !important;
+  padding-left: 20px !important;
+}
+
+.tabla-programas td:hover {
+  background: #fff !important;
+}
+/* Footer completamente nuevo - técnica más agresiva */
+.footer-nuevo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #000;
+  text-align: center;
+  padding: 8px 0;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.footer-nuevo p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Agregar espacio al body para que no tape contenido */
+body {
+  margin-bottom: 60px;
+}
+
+/* ========== NUEVA TABLA DE PORTAFOLIO - ESTRUCTURA LIMPIA ========== */
+
+/* Tabla principal */
+.tabla-portafolio-nueva {
+  width: 500px;
+  max-width: 500px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #000000;
+}
+
+/* Encabezados */
+.tabla-portafolio-nueva th {
+  background: #04bd3b;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-right: 1px solid #000000;
+}
+
+.tabla-portafolio-nueva th:last-child {
+  border-right: 1px solid #000000;
+  border: #000000 solid 1px;
+}
+
+.tabla-portafolio-nueva .col-tipo {
+  width: 45%;
+  border-right: 2px solid #000000;
+  border: #000000 solid 2px;
+}
+
+.tabla-portafolio-nueva .col-evidencia {
+  width: 55%;
+  border-right: 2px solid #000000;
+  border: #000000 solid 2px;
+}
+
+/* Filas y celdas básicas */
+.tabla-portafolio-nueva tr {
+  height: 55px;
+  min-height: 55px;
+  border-right: 1px solid #000000;
+  border: #000000 solid 2px;
+}
+
+.tabla-portafolio-nueva td {
+  height: 55px;
+  min-height: 55px;
+  vertical-align: middle;
+  padding: 12px;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+/* Eliminar bordes en última celda y última fila */
+.tabla-portafolio-nueva td:last-child {
+  border-right: none;
+}
+
+.tabla-portafolio-nueva tr:last-child td {
+  border-bottom: none;
+}
+
+/* Colores por categoría */
+.categoria-deportivo td {
+  background-color: #c6e2ff !important;
+}
+
+.categoria-sublimacion td {
+  background-color: #e0ffe0 !important;
+}
+
+.categoria-otros td {
+  background-color: #ffd6d6 !important;
+}
+
+.categoria-publicitario td {
+  background-color: #b2f7e2 !important;
+}
+
+/* Nombres de categorías (primera columna) */
+.categoria-nombre {
+  text-align: left !important;
+  padding-left: 20px !important;
+  font-weight: bold;
+  color: #333 !important;
+  font-size: 16px;
+}
+
+/* Celdas de evidencia - TODAS IGUALES */
+.evidencia-celda {
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 8px !important;
+  height: 55px !important;
+  min-height: 55px !important;
+  max-height: 55px !important;
+  line-height: 55px !important;
+}
+
+/* Botones de evidencia - TODOS EXACTAMENTE IGUALES */
+.btn-evidencia {
+  display: inline-block !important;
+  width: 150px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  
+  /* Estilo visual */
+  background: linear-gradient(135deg, #04bd3b, #02a832) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 8px rgba(4,189,59,0.3) !important;
+  transition: all 0.3s ease !important;
+  
+  /* Texto */
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.btn-evidencia:hover {
+  background: linear-gradient(135deg, #02a832, #028028) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(4,189,59,0.4) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.btn-evidencia:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(4,189,59,0.3) !important;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .tabla-portafolio-nueva {
+    width: 100%;
+    margin: 15px auto;
+  }
+  
+  .tabla-portafolio-nueva th {
+    font-size: 16px;
+    padding: 12px 8px;
+  }
+  
+  .tabla-portafolio-nueva tr {
+    height: 50px;
+    min-height: 50px;
+  }
+  
+  .tabla-portafolio-nueva td {
+    height: 50px;
+    min-height: 50px;
+    padding: 8px;
+  }
+  
+  .evidencia-celda {
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    line-height: 50px !important;
+  }
+  
+  .btn-evidencia {
+    width: 120px !important;
+    height: 35px !important;
+    line-height: 35px !important;
+    font-size: 12px !important;
+  }
+  
+  .categoria-nombre {
+    font-size: 14px;
+    padding-left: 15px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .tabla-portafolio-nueva tr {
+    height: 45px;
+    min-height: 45px;
+  }
+  
+  .tabla-portafolio-nueva td {
+    height: 45px;
+    min-height: 45px;
+    padding: 6px;
+  }
+  
+  .evidencia-celda {
+    height: 45px !important;
+    min-height: 45px !important;
+    max-height: 45px !important;
+    line-height: 45px !important;
+  }
+  
+  .btn-evidencia {
+    width: 100px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 11px !important;
+    border-radius: 15px !important;
+  }
+  
+  .categoria-nombre {
+    font-size: 13px;
+    padding-left: 10px !important;
+  }
+}
+
+/* ========== FIN DE NUEVA TABLA DE PORTAFOLIO ========== */
+
+@media (max-width: 768px) {
+  .footer-nuevo {
+    padding: 6px 0;
+  }
+  .footer-nuevo p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  body {
+    margin-bottom: 50px;
+  }
+}
+
+/* ========== FIN EFECTO SCROLL TÍTULO ========== */
+
