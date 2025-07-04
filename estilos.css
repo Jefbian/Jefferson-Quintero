@@ -659,7 +659,7 @@ body {
   }
 }
 
-/* ========== EFECTO SCROLL TÍTULO - DESPLAZAMIENTO IZQUIERDO SOLO MÓVIL ========== */
+/* ========== EFECTO SCROLL TÍTULO - DESPLAZAMIENTO IZQUIERDO MÓVIL ========== */
 
 /* Efecto de margen izquierdo en el título al hacer scroll SOLO EN MÓVILES */
 #titulo-animado {
@@ -669,10 +669,10 @@ body {
   margin-left: 0px !important;
 }
 
-/* Solo aplicar el margen en dispositivos móviles (768px o menos) */
+/* Solo aplicar el desplazamiento izquierdo en dispositivos móviles (768px o menos) */
 @media (max-width: 768px) {
   #titulo-animado.scroll-activo {
-    margin-left: 10px !important;
+    margin-left: 80px !important;
   }
 }
 
