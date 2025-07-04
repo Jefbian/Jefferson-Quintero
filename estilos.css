@@ -422,7 +422,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 2px solid #000000;
+  border: 3px solid #000000;
 }
 
 /* Encabezados */
@@ -433,7 +433,7 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
-  border: 1px solid #000000;
+  border: 3px solid #000000;
 }
 
 .tabla-portafolio-nueva .col-tipo {
@@ -455,24 +455,28 @@ body {
   min-height: 55px;
   vertical-align: middle;
   padding: 12px;
-  border: 1px solid #000000;
+  border: 3px solid #000000;
 }
 
 /* Colores por categoría */
 .categoria-deportivo td {
   background-color: #c6e2ff !important;
+  border: 3px solid #000000 !important;
 }
 
 .categoria-sublimacion td {
   background-color: #e0ffe0 !important;
+  border: 3px solid #000000 !important;
 }
 
 .categoria-otros td {
   background-color: #ffd6d6 !important;
+  border: 3px solid #000000 !important;
 }
 
 .categoria-publicitario td {
   background-color: #b2f7e2 !important;
+  border: 3px solid #000000 !important;
 }
 
 /* Nombres de categorías (primera columna) */
