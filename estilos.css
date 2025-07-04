@@ -43,7 +43,7 @@ th {
   font-size: 20px;
 }
 
-/* Mantener color verde en encabezados de tabla (NO h1, h2, h3) */
+/* Mantener color verde en encabezados de tabla (NO afectar h1, h2, h3) */
 table th:hover,
 table th:active,
 table th:focus {
@@ -778,9 +778,9 @@ body {
   background-color: inherit !important;
 }
 
-/* ========== FORZAR COLOR VERDE SOLO EN ENCABEZADOS DE TABLAS ========== */
+/* ========== FORZAR COLOR VERDE EN TODOS LOS ENCABEZADOS DE TABLAS ========== */
 
-/* Mantener color verde en TODOS los encabezados de TABLAS (no h1, h2, h3) */
+/* Mantener color verde en TODOS los encabezados de tablas sin excepción */
 table th,
 .tabla-portafolio-nueva th,
 .tabla-portafolio.servicios th,
@@ -789,7 +789,7 @@ table th,
   color: white !important;
 }
 
-/* Mantener color verde en hover y otros estados EN TABLAS */
+/* Mantener color verde en hover y otros estados */
 table th:hover,
 table th:active,
 table th:focus,
@@ -806,7 +806,7 @@ table th:focus,
   color: white !important;
 }
 
-/* Cuando una fila está en hover, mantener encabezados verdes EN TABLAS */
+/* Cuando una fila está en hover, mantener encabezados verdes */
 table tr:hover th,
 .tabla-portafolio-nueva tr:hover th,
 .tabla-portafolio.servicios tr:hover th,
@@ -815,5 +815,5 @@ table tr:hover th,
   color: white !important;
 }
 
-/* ========== FIN FORZAR COLOR VERDE ENCABEZADOS DE TABLAS ========== */
+/* ========== FIN FORZAR COLOR VERDE ENCABEZADOS ========== */
 
