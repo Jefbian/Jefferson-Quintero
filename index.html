@@ -25,7 +25,7 @@
     z-index:0;
     background: none;
   ">
-    <div style="
+    <div id="imagen-fondo" style="
       position:absolute;
       top:0; right:0; bottom:0;
       width:60vw;
@@ -74,10 +74,26 @@
       #titulo-animado {
         font-size: 1.8em !important;
       }
+      
+      /* Imagen de fondo más grande en móviles */
+      #imagen-fondo {
+        width: 95vw !important;
+        min-width: 300px !important;
+        max-width: none !important;
+        background-size: cover !important;
+        opacity: 0.25 !important;
+      }
     }
     @media (min-width: 481px) and (max-width: 768px) {
       #titulo-animado {
         font-size: 2.0em !important;
+      }
+      
+      /* Imagen de fondo ajustada para tablets */
+      #imagen-fondo {
+        width: 80vw !important;
+        background-size: cover !important;
+        opacity: 0.22 !important;
       }
     }
   </style>
