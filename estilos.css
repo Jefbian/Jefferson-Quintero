@@ -661,18 +661,16 @@ body {
 
 /* ========== EFECTO SCROLL TÍTULO - DESPLAZAMIENTO DERECHO MÓVIL ========== */
 
-/* Efecto de margen derecho en el título al hacer scroll SOLO EN MÓVILES */
+/* Efecto de desplazamiento en el título al hacer scroll SOLO EN MÓVILES */
 #titulo-animado {
-  transition: transform 0.5s cubic-bezier(.4,1.6,.6,1), 
-              font-size 0.5s ease, 
-              margin-right 0.3s ease !important;
-  margin-right: 0px !important;
+  transition: transform 0.3s ease !important;
+  transform: translateX(0px) !important;
 }
 
 /* Solo aplicar el desplazamiento derecho en dispositivos móviles (768px o menos) */
 @media (max-width: 768px) {
   #titulo-animado.scroll-activo {
-    margin-right: 10px !important;
+    transform: translateX(65px) !important;
   }
 }
 
