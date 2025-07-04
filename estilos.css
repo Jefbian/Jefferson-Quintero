@@ -26,7 +26,7 @@ main {
   flex-direction: column;
 }
 table {
-  border-top: 2px solid #05db45;
+  border-top: 1px solid #05db45;
   width: 60%;
   margin: 20px auto;
   background-color: #fdfdfd;
@@ -41,6 +41,19 @@ th {
   padding: 12px;
   text-align: center;
   font-size: 20px;
+}
+
+/* Mantener color verde en encabezados en todos los estados */
+th:hover,
+th:active,
+th:focus {
+  background-color: #04bd3b !important;
+  color: white !important;
+}
+
+tr:hover th {
+  background-color: #04bd3b !important;
+  color: white !important;
 }
 td {
   padding: 10px;
@@ -351,10 +364,21 @@ table {
   overflow: hidden;
 }
 /* Fondo blanco y texto negro solo para las celdas td de la tabla de servicios */
+.tabla-portafolio.servicios {
+  border: 1px solid #000000 !important;
+  border-top: 1px solid #000000 !important;
+  border-collapse: collapse !important;
+}
+
+.tabla-portafolio.servicios th {
+  border: 1px solid #000000 !important;
+}
+
 .tabla-portafolio.servicios td {
   background: #fff !important;
   color: #111 !important;
   transition: none !important;
+  border: 1px solid #000000 !important;
 }
 
 /* Alineación a la izquierda para la columna "Servicio" */
@@ -367,10 +391,21 @@ table {
   background: #fff !important;
 }
 /* Fondo blanco y texto negro solo para las celdas td de la tabla de programas */
+.tabla-programas {
+  border: 1px solid #000000 !important;
+  border-top: 1px solid #000000 !important;
+  border-collapse: collapse !important;
+}
+
+.tabla-programas th {
+  border: 1px solid #000000 !important;
+}
+
 .tabla-programas td {
   background: #fff !important;
   color: #111 !important;
   transition: none !important;
+  border: 1px solid #000000 !important;
 }
 
 /* Alineación a la izquierda para la primera columna de la tabla de programas */
@@ -410,142 +445,162 @@ body {
   margin-bottom: 60px;
 }
 
-/* ========== NUEVA TABLA DE PORTAFOLIO - ESTRUCTURA LIMPIA ========== */
+/* ========== NUEVA TABLA DE PORTAFOLIO - BORDES 2PX NEGROS ========== */
 
-/* Tabla principal */
+/* Tabla principal - estructura básica */
 .tabla-portafolio-nueva {
-  width: 500px;
-  max-width: 500px;
+  width: 550px;
+  max-width: 550px;
   margin: 20px auto;
   border-collapse: collapse;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 3px solid #000000;
+  border: 2px solid #000000 !important;
 }
 
-/* Encabezados */
+/* FORZAR bordes en TODOS los elementos de la tabla */
+.tabla-portafolio-nueva,
+.tabla-portafolio-nueva *,
+.tabla-portafolio-nueva tr,
+.tabla-portafolio-nueva td,
 .tabla-portafolio-nueva th {
-  background: #04bd3b;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  border: 3px solid #000000;
+  border: 2px solid #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Encabezados de la tabla */
+.tabla-portafolio-nueva th {
+  background: #04bd3b !important;
+  color: #fff !important;
+  padding: 15px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  border: 2px solid #000000 !important;
 }
 
 .tabla-portafolio-nueva .col-tipo {
-  width: 45%;
+  width: 60% !important;
+  border: 2px solid #000000 !important;
 }
 
 .tabla-portafolio-nueva .col-evidencia {
-  width: 55%;
+  width: 40% !important;
+  border: 2px solid #000000 !important;
 }
 
-/* Filas y celdas básicas */
+/* Todas las filas y celdas */
 .tabla-portafolio-nueva tr {
-  height: 55px;
-  min-height: 55px;
+  border: 2px solid #000000 !important;
 }
 
 .tabla-portafolio-nueva td {
-  height: 55px;
-  min-height: 55px;
-  vertical-align: middle;
-  padding: 12px;
-  border: 3px solid #000000;
+  border: 2px solid #000000 !important;
+  vertical-align: middle !important;
+  padding: 12px !important;
 }
 
-/* Colores por categoría */
+/* Colores por categoría - TODOS con borde 2px negro */
 .categoria-deportivo td {
   background-color: #c6e2ff !important;
-  border: 3px solid #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
 .categoria-sublimacion td {
   background-color: #e0ffe0 !important;
-  border: 3px solid #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
 .categoria-otros td {
   background-color: #ffd6d6 !important;
-  border: 3px solid #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
 .categoria-publicitario td {
   background-color: #b2f7e2 !important;
-  border: 3px solid #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
-/* Nombres de categorías (primera columna) */
+/* Celdas de categoría (nombres) */
 .categoria-nombre {
   text-align: left !important;
   padding-left: 20px !important;
-  font-weight: bold;
+  font-weight: bold !important;
   color: #333 !important;
-  font-size: 16px;
+  font-size: 16px !important;
+  border: 2px solid #000000 !important;
 }
 
-/* Celdas de evidencia - TODAS IGUALES */
+/* Celdas de evidencia */
 .evidencia-celda {
   text-align: center !important;
   vertical-align: middle !important;
   padding: 8px !important;
-  height: 55px !important;
-  min-height: 55px !important;
-  max-height: 55px !important;
-  line-height: 55px !important;
-  position: relative !important;
-  z-index: 100 !important;
+  border: 2px solid #000000 !important;
 }
 
-/* Botones de evidencia - TODOS EXACTAMENTE IGUALES */
+/* Botones de evidencia */
 .btn-evidencia {
-  display: inline-block !important;
-  width: 150px !important;
-  height: 40px !important;
-  line-height: 40px !important;
-  text-align: center !important;
-  vertical-align: middle !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 15px 0 5px;
+  box-sizing: border-box;
   
   /* Estilo visual */
-  background: linear-gradient(135deg, #04bd3b, #02a832) !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  border-radius: 20px !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  box-shadow: 0 3px 8px rgba(4,189,59,0.3) !important;
-  transition: all 0.3s ease !important;
+  background: linear-gradient(135deg, #04bd3b, #02a832);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(4,189,59,0.3);
+  transition: all 0.3s ease;
   
   /* Texto */
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   
-  /* SOLUCIÓN PARA CLICS EN MÓVIL */
-  position: relative !important;
-  z-index: 150 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
+  cursor: pointer;
+  border: none;
 }
 
 .btn-evidencia:hover {
-  background: linear-gradient(135deg, #02a832, #028028) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 5px 15px rgba(4,189,59,0.4) !important;
-  color: #fff !important;
-  text-decoration: none !important;
+  background: linear-gradient(135deg, #02a832, #028028);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(4,189,59,0.4);
+  color: #fff;
+  text-decoration: none;
 }
 
 .btn-evidencia:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 6px rgba(4,189,59,0.3) !important;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(4,189,59,0.3);
+}
+
+/* ELIMINAR cualquier efecto hover en las celdas que pueda cambiar bordes */
+.tabla-portafolio-nueva td:hover,
+.tabla-portafolio-nueva tr:hover {
+  border: 2px solid #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* REGLA UNIVERSAL para asegurar bordes en toda la tabla */
+.tabla-portafolio-nueva table,
+.tabla-portafolio-nueva tbody,
+.tabla-portafolio-nueva thead,
+.tabla-portafolio-nueva tr,
+.tabla-portafolio-nueva td,
+.tabla-portafolio-nueva th {
+  border: 2px solid #000000 !important;
+  border-collapse: collapse !important;
 }
 
 /* Responsive */
@@ -553,8 +608,6 @@ body {
   .tabla-portafolio-nueva {
     width: 100%;
     margin: 15px auto;
-    position: relative;
-    z-index: 100;
   }
   
   .tabla-portafolio-nueva th {
@@ -562,102 +615,35 @@ body {
     padding: 12px 8px;
   }
   
-  .tabla-portafolio-nueva tr {
-    height: 50px;
-    min-height: 50px;
-    position: relative;
-    z-index: 100;
-  }
-  
-  .tabla-portafolio-nueva td {
-    height: 50px;
-    min-height: 50px;
-    padding: 8px;
-    position: relative;
-    z-index: 100;
-  }
-  
-  .evidencia-celda {
-    height: 50px !important;
-    min-height: 50px !important;
-    max-height: 50px !important;
-    line-height: 50px !important;
-    position: relative !important;
-    z-index: 110 !important;
-  }
-  
   .btn-evidencia {
-    width: 120px !important;
-    height: 35px !important;
-    line-height: 35px !important;
-    font-size: 12px !important;
-    position: relative !important;
-    z-index: 150 !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
   }
   
   .categoria-nombre {
     font-size: 14px;
-    padding-left: 15px !important;
+    padding-left: 15px;
   }
 }
 
 @media (max-width: 500px) {
-  .tabla-portafolio-nueva tr {
-    height: 45px;
-    min-height: 45px;
-    position: relative;
-    z-index: 100;
-  }
-  
-  .tabla-portafolio-nueva td {
-    height: 45px;
-    min-height: 45px;
-    padding: 6px;
-    position: relative;
-    z-index: 100;
-  }
-  
-  .evidencia-celda {
-    height: 45px !important;
-    min-height: 45px !important;
-    max-height: 45px !important;
-    line-height: 45px !important;
-    position: relative !important;
-    z-index: 110 !important;
-  }
-  
   .btn-evidencia {
-    width: 100px !important;
-    height: 30px !important;
-    line-height: 30px !important;
-    font-size: 11px !important;
-    border-radius: 15px !important;
-    position: relative !important;
-    z-index: 150 !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 11px;
+    border-radius: 15px;
   }
   
   .categoria-nombre {
     font-size: 13px;
-    padding-left: 10px !important;
+    padding-left: 10px;
   }
 }
 
+/* ========== FIN DE NUEVA TABLA DE PORTAFOLIO ========== */
 /* ========== FIN DE NUEVA TABLA DE PORTAFOLIO ========== */
 
 @media (max-width: 768px) {
@@ -760,4 +746,74 @@ body {
 }
 
 /* ========== FIN DE ESTILOS PARA CLICS EN MÓVIL ========== */
+
+/* ANULAR estilos globales de tabla para la tabla de portafolio */
+.tabla-portafolio-nueva {
+  border-top: 2px solid #000000 !important;
+  width: 550px !important;
+  background-color: #fff !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* Anular estilos de td y th globales */
+.tabla-portafolio-nueva td,
+.tabla-portafolio-nueva th {
+  border: 2px solid #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Anular estilos de hover globales */
+.tabla-portafolio-nueva tr:nth-child(even) {
+  background-color: inherit !important;
+}
+
+.tabla-portafolio-nueva tr:hover {
+  background-color: inherit !important;
+}
+
+.tabla-portafolio-nueva td:hover,
+.tabla-portafolio-nueva th:hover {
+  border: 2px solid #000000 !important;
+  background-color: inherit !important;
+}
+
+/* ========== FORZAR COLOR VERDE EN TODOS LOS ENCABEZADOS DE TABLAS ========== */
+
+/* Mantener color verde en TODOS los encabezados de tablas sin excepción */
+table th,
+.tabla-portafolio-nueva th,
+.tabla-portafolio.servicios th,
+.tabla-programas th {
+  background-color: #04bd3b !important;
+  color: white !important;
+}
+
+/* Mantener color verde en hover y otros estados */
+table th:hover,
+table th:active,
+table th:focus,
+.tabla-portafolio-nueva th:hover,
+.tabla-portafolio-nueva th:active,
+.tabla-portafolio-nueva th:focus,
+.tabla-portafolio.servicios th:hover,
+.tabla-portafolio.servicios th:active,
+.tabla-portafolio.servicios th:focus,
+.tabla-programas th:hover,
+.tabla-programas th:active,
+.tabla-programas th:focus {
+  background-color: #04bd3b !important;
+  color: white !important;
+}
+
+/* Cuando una fila está en hover, mantener encabezados verdes */
+table tr:hover th,
+.tabla-portafolio-nueva tr:hover th,
+.tabla-portafolio.servicios tr:hover th,
+.tabla-programas tr:hover th {
+  background-color: #04bd3b !important;
+  color: white !important;
+}
+
+/* ========== FIN FORZAR COLOR VERDE ENCABEZADOS ========== */
 
