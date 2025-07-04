@@ -211,7 +211,7 @@ ol {
   flex-direction: column;
   gap: 14px;
   left: 10px;
-  top: calc(51% - 20px);
+  top: calc(51% + 35px);
   transform: translateY(-50%);
   z-index: 900;
 
@@ -433,32 +433,21 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
-  border-right: 1px solid #000000;
-}
-
-.tabla-portafolio-nueva th:last-child {
-  border-right: 1px solid #000000;
-  border: #000000 solid 1px;
+  border: 1px solid #000000;
 }
 
 .tabla-portafolio-nueva .col-tipo {
   width: 45%;
-  border-right: 2px solid #000000;
-  border: #000000 solid 2px;
 }
 
 .tabla-portafolio-nueva .col-evidencia {
   width: 55%;
-  border-right: 2px solid #000000;
-  border: #000000 solid 2px;
 }
 
 /* Filas y celdas básicas */
 .tabla-portafolio-nueva tr {
   height: 55px;
   min-height: 55px;
-  border-right: 1px solid #000000;
-  border: #000000 solid 2px;
 }
 
 .tabla-portafolio-nueva td {
@@ -466,17 +455,7 @@ body {
   min-height: 55px;
   vertical-align: middle;
   padding: 12px;
-  border-bottom: 2px solid #000000;
-  border-right: 2px solid #000000;
-}
-
-/* Eliminar bordes en última celda y última fila */
-.tabla-portafolio-nueva td:last-child {
-  border-right: none;
-}
-
-.tabla-portafolio-nueva tr:last-child td {
-  border-bottom: none;
+  border: 1px solid #000000;
 }
 
 /* Colores por categoría */
