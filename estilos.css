@@ -211,7 +211,7 @@ ol {
   flex-direction: column;
   gap: 14px;
   left: 10px;
-  top: calc(51% + 10px);
+  top: calc(51% + 35px);
   transform: translateY(-50%);
   z-index: 900;
 
