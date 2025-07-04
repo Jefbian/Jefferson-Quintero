@@ -659,6 +659,20 @@ body {
   }
 }
 
+/* ========== EFECTO SCROLL TÍTULO - DESPLAZAMIENTO IZQUIERDO ========== */
+
+/* Efecto de margen izquierdo en el título al hacer scroll */
+#titulo-animado {
+  transition: transform 0.5s cubic-bezier(.4,1.6,.6,1), 
+              font-size 0.5s ease, 
+              margin-left 0.3s ease !important;
+  margin-left: 0px !important;
+}
+
+#titulo-animado.scroll-activo {
+  margin-left: 10px !important;
+}
+
 /* ========== FIN EFECTO SCROLL TÍTULO ========== */
 
 /* ========== ESTILOS ADICIONALES PARA SOLUCIONAR CLICS EN MÓVIL ========== */

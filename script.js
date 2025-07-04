@@ -148,3 +148,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// --- Efecto de desplazamiento del título al hacer scroll ---
+window.addEventListener('scroll', function() {
+  const titulo = document.getElementById('titulo-animado');
+  if (titulo) {
+    if (window.scrollY > 100) {
+      titulo.classList.add('scroll-activo');
+    } else {
+      titulo.classList.remove('scroll-activo');
+    }
+  }
+});
